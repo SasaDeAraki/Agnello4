@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Agnello.Persistence/Agnello.Persistence.csproj" />
+  <Project Path="Agnello.Persistence.Tests/Agnello.Persistence.Tests.csproj" />
+  <Project Path="Agnello.Api/Agnello.Api.csproj" />
+</Solution>
