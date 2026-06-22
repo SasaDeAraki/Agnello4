@@ -1,12 +1,6 @@
 # Agnello - instrucoes de execucao
 
-Este arquivo deve ser lido a partir da raiz da entrega descompactada.
-A estrutura esperada e:
-
-- `Agnello backend`
-- `Agnello frontend`
-
-O pacote contem dois projetos:
+Este workspace tem dois projetos:
 
 - `Agnello backend`: API C# com persistencia SQLite.
 - `Agnello frontend`: app Android em Compose com Room e consumo da API.
@@ -24,7 +18,7 @@ O backend expoe a API em `http://localhost:5000` e usa SQLite local.
 ### Rodar
 
 ```powershell
-cd ".\Agnello backend"
+cd "D:\Arquivos\Curso\FIAP\Ano 3\Fase 4\Agnello backend"
 dotnet run --project ".\Agnello.Api\Agnello.Api.csproj"
 ```
 
@@ -58,7 +52,7 @@ O app usa:
 Abra a pasta:
 
 ```text
-.\Agnello frontend
+D:\Arquivos\Curso\FIAP\Ano 3\Fase 4\Agnello frontend
 ```
 
 Depois execute o modulo `app`.
@@ -66,7 +60,7 @@ Depois execute o modulo `app`.
 ### Rodar via linha de comando
 
 ```powershell
-cd ".\Agnello frontend"
+cd "D:\Arquivos\Curso\FIAP\Ano 3\Fase 4\Agnello frontend"
 .\gradlew.bat :app:assembleDebug
 ```
 
@@ -83,7 +77,7 @@ Use este endereco quando estiver rodando no emulador Android.
 Se estiver usando celular fisico, troque o `BASE_URL` em:
 
 ```text
-.\Agnello frontend\app\src\main\java\br\com\fiap\agnellofrontend\data\AppContainer.kt
+Agnello frontend\app\src\main\java\br\com\fiap\agnellofrontend\data\AppContainer.kt
 ```
 
 para o IP da sua maquina na rede local, por exemplo:
@@ -96,18 +90,19 @@ http://192.168.0.10:5000/
 
 ### Backend
 
-- `Agnello backend\Agnello.Api\Program.cs`: API REST
-- `Agnello backend\Agnello.Persistence`: dominio, repositorio e SQLite
+- `Agnello.Api/Program.cs`: API REST
+- `Agnello.Persistence`: dominio, repositorio e SQLite
 
 ### Frontend
 
-- `Agnello frontend\app\src\main\java\...\data\local`: Room
-- `Agnello frontend\app\src\main\java\...\data\remote`: Retrofit
-- `Agnello frontend\app\src\main\java\...\data\repository`: sincronizacao entre API e Room
-- `Agnello frontend\app\src\main\java\...\ui`: tela principal e ViewModel
+- `app/src/main/java/.../data/local`: Room
+- `app/src/main/java/.../data/remote`: Retrofit
+- `app/src/main/java/.../data/repository`: sincronizacao entre API e Room
+- `app/src/main/java/.../ui`: tela principal e ViewModel
 
 ## Observacoes
 
 - O banco local do backend e o cache do Room sao separados.
 - Se o app mostrar erro de conexao, confirme primeiro se a API esta rodando na porta `5000`.
 - Se a porta `5000` ja estiver ocupada, feche a instancia antiga do backend antes de iniciar outra.
+
